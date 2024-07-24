@@ -6,9 +6,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import {  AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { RxHamburgerMenu } from 'react-icons/rx'
+import { useSelector } from "react-redux";
 
 const Navbar2 = () => {
     const [nav, setNav] = useState(false);
+    const item=useSelector((state)=>state.cart)
 
   const links = [
     {
@@ -91,7 +93,7 @@ const Navbar2 = () => {
 <div className="flex gap-6 text-[26px]">
             <div className="relative cursor-pointer">
                 <AiOutlineShoppingCart/>
-                <div className="absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px] rounded-full text-white text-[14px] grid place-items-center ">0</div>
+                <div className="absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px] rounded-full text-white text-[14px] grid place-items-center ">{id.length}</div>
             </div>
             <AiOutlineSearch/>
             <CgProfile/>

@@ -1,10 +1,17 @@
 // components/ProductCard.js
-
+"use client";
+import { add } from '@/Redux/CartSlice';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 const ProductCard = ({ img, description, price, inStock, hasDiscount,id }) => {
+  const dispatch = useDispatch();
+  const handleadd=(id)=>{
+     dispatch(add(id))
+  }
   return (
     <>
    <div >
@@ -22,7 +29,7 @@ const ProductCard = ({ img, description, price, inStock, hasDiscount,id }) => {
         <div className=" mb-2 text-gray-800 font-medium  ">₹ {price}</div>
         <div>
         {inStock ? (
-          <button className="bg-yellow-300 text-dark px-3 py-1 rounded-full hover:bg-yellow-500 text-sm font-semibold">Add to Cart</button>
+          <button className="bg-yellow-300 text-dark px-3 py-1 rounded-full hover:bg-yellow-500 text-sm font-semibold" onClick={()=>handleadd(id)}>Add to Cart</button>
         ) : (
           <button className="bg-red-400 text-black px-3 py-1 rounded-full hover:bg-red-500 cursor-not-allowed text-sm" disabled>Add to Cart</button>
         )}

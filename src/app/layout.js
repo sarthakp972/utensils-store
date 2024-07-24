@@ -1,4 +1,5 @@
 
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
@@ -10,6 +11,7 @@ import Test from "@/Components/Test";
 import Navbar3 from "@/Components/Navbar3";
 import Homecart from "@/Components/Homecart";
 import Footer from "@/Components/Footer";
+import Provider from "@/Redux/provider";
 
 
 
@@ -27,11 +29,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
      
+     <Provider>
         <Navbar2/>
    <Navbar3/>
    
   
-        {children}</body>
+        {children}
+        </Provider></body>
     </html>
   );
 }
