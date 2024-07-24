@@ -8,6 +8,8 @@ import Newarrival from "@/Components/Newarrival";
 import Navbar2 from "@/Components/Navbar2";
 import Test from "@/Components/Test";
 import Navbar3 from "@/Components/Navbar3";
+import Homecart from "@/Components/Homecart";
+import Footer from "@/Components/Footer";
 
 
 
@@ -27,9 +29,8 @@ export default function RootLayout({ children }) {
      
         <Navbar2/>
    <Navbar3/>
-   <Slide/>
-
-    
+   
+  
         {children}</body>
     </html>
   );

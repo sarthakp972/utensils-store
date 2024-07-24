@@ -13,16 +13,19 @@ const Navbar2 = () => {
   const links = [
     {
       id: 1,
-      link: "home",
+      link: "/",
+      nam:"Home",
     },
     {
       id: 2,
-      link: "about",
+      link: "/about",
+      nam:"About",
     },
     
     {
       id: 3,
-      link: "contact",
+      link: "/contact",
+      nam:"Contact",
     },
  
   ];
@@ -34,7 +37,7 @@ const Navbar2 = () => {
         <h1 className="text-5xl font-signature ml-2">
           <a
             className="no-underline"
-            href=""
+            href="/"
             target="_blank"
             rel="noreferrer"
           >
@@ -44,12 +47,12 @@ const Navbar2 = () => {
       </div>
 
       <ul className="hidden md:flex">
-        {links.map(({ id, link }) => (
+        {links.map(({ id, link ,nam}) => (
           <li
             key={id}
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 no-underline"
           >
-            <Link href={link} className="no-underline text-dark">{link}</Link>
+            <Link href={link} className="no-underline text-dark">{nam}</Link>
           </li>
         ))}
       </ul>

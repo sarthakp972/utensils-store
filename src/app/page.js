@@ -1,10 +1,18 @@
+
 import Image from "next/image";
+import Homecart from "@/Components/Homecart";
+import Footer from "@/Components/Footer";
+import Slide from "@/Components/Slide";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     
-    </main>
+   <>
+        <Slide/>
+<Homecart/>
+<div className="mt-20">
+<Footer/>
+</div>
+   </>
   );
 }
 
